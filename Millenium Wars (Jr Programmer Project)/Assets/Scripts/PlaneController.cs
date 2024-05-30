@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlaneController : MonoBehaviour
+public class PlaneController : ControllableEntity // Inheritance
 {
     [Header("Plane Stats")]
     [Tooltip("How much the throttle ramps up or down")]
@@ -21,7 +21,7 @@ public class PlaneController : MonoBehaviour
     [SerializeField] GameObject laser;
     public AudioClip Shoot;
     private AudioSource playerAudioShoot;
-    private float responseModifier
+    private float responseModifier // Encapsulation
     {
         get
         {
@@ -35,7 +35,7 @@ public class PlaneController : MonoBehaviour
         playerAudioShoot = GetComponent<AudioSource>();
     }
 
-    private void HandleInputs()
+    protected override void HandleInputs() // Polymorphism
     {
         roll = Input.GetAxis("Roll");
         pitch = Input.GetAxis("Pitch");
@@ -54,7 +54,7 @@ public class PlaneController : MonoBehaviour
 
     private void Update()
     {
-        HandleInputs();
+        HandleInputs(); // Abstraction
         UpdateHUD();
         ProcessFiring();
     }
@@ -67,7 +67,7 @@ public class PlaneController : MonoBehaviour
         rb.AddTorque(transform.forward * yaw * responseModifier);
     }
 
-    private void UpdateHUD()
+    protected override void UpdateHUD()
     {
         hud.text = "Throttle " + throttle.ToString("F0") + "%\n";
         hud.text += "Altitude " + transform.position.y.ToString("F0") + "m";
