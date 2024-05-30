@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ShipController : MonoBehaviour
+public class PlaneController : MonoBehaviour
 {
     [Header("Plane Stats")]
     [Tooltip("How much the throttle ramps up or down")]
@@ -18,6 +18,9 @@ public class ShipController : MonoBehaviour
     private float yaw;
     Rigidbody rb;
     [SerializeField] TextMeshProUGUI hud;
+    [SerializeField] GameObject laser;
+    public AudioClip Shoot;
+    private AudioSource playerAudioShoot;
     private float responseModifier
     {
         get
@@ -29,6 +32,7 @@ public class ShipController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        playerAudioShoot = GetComponent<AudioSource>();
     }
 
     private void HandleInputs()
@@ -52,6 +56,7 @@ public class ShipController : MonoBehaviour
     {
         HandleInputs();
         UpdateHUD();
+        ProcessFiring();
     }
 
     private void FixedUpdate()
@@ -66,5 +71,31 @@ public class ShipController : MonoBehaviour
     {
         hud.text = "Throttle " + throttle.ToString("F0") + "%\n";
         hud.text += "Altitude " + transform.position.y.ToString("F0") + "m";
+    }
+
+    void ProcessFiring()
+    {
+        if (Input.GetButton("Fire1"))
+        {
+            SetLaserActive(true);
+            if (!playerAudioShoot.isPlaying)
+            {
+                playerAudioShoot.PlayOneShot(Shoot, 1.0f);
+            }
+        }
+        else
+        {
+            SetLaserActive(false);
+            if(playerAudioShoot.isPlaying)
+            {
+                playerAudioShoot.Stop();
+            }
+        }
+    }
+
+    private void SetLaserActive(bool isActive)
+    {
+        var emissionModule = laser.GetComponent<ParticleSystem>().emission;
+        emissionModule.enabled = isActive;
     }
 }
