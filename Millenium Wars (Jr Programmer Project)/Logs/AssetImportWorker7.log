@@ -11166,3 +11166,39 @@ AssetImportParameters requested are different than current active one (requested
   custom:scripting/monoscript/fileName/GetInstallerTmpFileName.cs: fa7bda723ac795b48e38504727f44981 -> d09e0b5c7a9af5874530e17ef23025f0
   custom:scripting/monoscript/fileName/AssetModificationProcessor.cs: 84d720d70e5c24b7d0630ef5cea215ce -> a602c9e59e7db185e3a0d68d986e6fef
   custom:scripting/monoscript/fileName/IsCollabProjectMigratedResponse.cs: 4c3294c6a51e6f42161d191230692016 -> af2b76c693935deee55cfcaed2aa7568
+========================================================================
+Received Import Request.
+  Time since last request: 24707.352950 seconds.
+  path: Assets/Prefabs/Plane.prefab
+  artifactKey: Guid(30837eee15d7a4261bcfef9a98a1c315) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Plane.prefab using Guid(30837eee15d7a4261bcfef9a98a1c315) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '117fc20f24069286b045b5dd3bb9b486') in 0.073285 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 66
+========================================================================
+Received Import Request.
+  Time since last request: 480.955502 seconds.
+  path: Assets/Models/Black.mat
+  artifactKey: Guid(e0627d98329c5482d8019a3fef790a59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Black.mat using Guid(e0627d98329c5482d8019a3fef790a59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f51d64041ae526c41059fd6a50119137') in 0.027175 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Models/TieWingMesh.mat
+  artifactKey: Guid(ef83c4f63034144f1bcad62e3bf89311) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/TieWingMesh.mat using Guid(ef83c4f63034144f1bcad62e3bf89311) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd795d3177c6c6be6aaa442d010ff6d58') in 0.003867 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000092 seconds.
+  path: Assets/Models/ScratchedMetal.mat
+  artifactKey: Guid(1297f9b33d4d846b480549f732cab296) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ScratchedMetal.mat using Guid(1297f9b33d4d846b480549f732cab296) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4712e477a3eb296f608559f195af4961') in 0.005101 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 89, details: Operation aborted.
+AssetImportWorker is now disconnected from the server
+Process exiting
